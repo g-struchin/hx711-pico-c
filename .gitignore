@@ -4,6 +4,7 @@
 
 # custom
 build/**
+/cmake-build-debug/
 
 
 ### C ###
