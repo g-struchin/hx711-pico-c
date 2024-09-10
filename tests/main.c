@@ -27,7 +27,7 @@
 #include "../include/common.h"
 //                 4294967296
 //#define DELAY_US    480000000
-#define DELAY_US    20000000
+#define DELAY_US    200000000
 
 #define PRINT_ARR(arr, len) \
     do { \
@@ -54,7 +54,7 @@ int main(void) {
         sleep_ms(1);
     }
 
-#if 1
+#if 0
     hx711_config_t hxcfg;
     hx711_get_default_config(&hxcfg);
 
@@ -120,7 +120,7 @@ int main(void) {
     printf("Closed communication with single HX711 chip\n");
 #endif
 
-#if 0
+#if 1
     hx711_multi_config_t hxmcfg;
     hx711_multi_get_default_config(&hxmcfg);
     hxmcfg.clock_pin = 14;
@@ -146,7 +146,7 @@ int main(void) {
     //hx711_multi_power_up(&hxm, hx711_gain_64);
 
     // 4. Wait for readings to settle
-    hx711_wait_settle(hx711_rate_80);
+    hx711_wait_settle(hx711_rate_10);
 
     // 5. Read values
     int32_t arr[hxmcfg.chips_len];
